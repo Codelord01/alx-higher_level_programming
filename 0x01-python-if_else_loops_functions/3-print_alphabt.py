@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-ascii_value = 97
-while ascii_value <= 122:
-    print(chr(ascii_value), end="")
-    ascii_value = ascii_value + 1
+
+for letter in range(97, 123, 1):
+    if letter not in (101, 113):
+        print("{:c}".format(letter), end='')
