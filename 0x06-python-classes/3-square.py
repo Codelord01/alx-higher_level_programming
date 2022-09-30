@@ -24,4 +24,6 @@ class Square:
             raise ValueError('size must be >= 0')
 
     def area(self):
+        """Finds the areas of the square
+        """
         return self.__size ** 2
