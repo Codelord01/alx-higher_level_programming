@@ -1,0 +1,60 @@
+Test for the square
+
+Import module
+>>> import sys
+>>> sys.path.insert(1, '../')
+>>> lib = __import__("4-print_square")
+>>> func = lib.print_square
+
+>>> size = 4
+
+#Normal check
+>>> func(size)
+####
+####
+####
+####
+
+#Negative number check
+>>> size = -1
+>>> func(size)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+
+
+#Type check
+>>> size = "david"
+>>> func(size)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+
+>>> func(1j)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> func([])
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> func({})
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+
+>>> func(())
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> size = 0.5
+>>> func(size)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
