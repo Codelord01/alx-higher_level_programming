@@ -1,0 +1,96 @@
+Test to for 7-base_geometry
+
+====================================================
+case: 0
+import
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+>>> func = BaseGeometry.integer_validator
+>>>
+====================================================
+case: 1
+Trying tp use area function
+>>> bg = BaseGeometry()
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+>>>
+=====================================================
+case: 2
+Test with correct input
+>>> bg.integer_validator("my_int", 12)
+>>>
+
+=====================================================
+case: 3
+Test with wrong string input for value
+>>> bg.integer_validator("my_int", "David")
+Traceback (most recent call last):
+...
+TypeError: my_int must be an integer
+>>>
+=====================================================
+case: 4
+Test with list input for value
+>>> bg.integer_validator("my_int", [])
+Traceback (most recent call last):
+...
+TypeError: my_int must be an integer
+>>>
+=====================================================
+case: 5
+Test with dictionary input for value
+>>> bg.integer_validator("my_int", {})
+Traceback (most recent call last):
+...
+TypeError: my_int must be an integer
+>>>
+======================================================
+case: 6
+Test with complex number input for value
+>>> bg.integer_validator("my_int", 1j)
+Traceback (most recent call last):
+...
+TypeError: my_int must be an integer
+>>>
+======================================================
+case: 7
+Test with bool input for value
+>>> bg.integer_validator("my_int", True)
+Traceback (most recent call last):
+...
+TypeError: my_int must be an integer
+>>>
+=======================================================
+case: 8
+Test with negative number input for value
+>>> bg.integer_validator("my_int", -2)
+Traceback (most recent call last):
+...
+ValueError: my_int must be greater than 0
+>>>
+========================================================
+case: 9
+Test with 0 as input for value
+>>> bg.integer_validator("my_int", 0)
+Traceback (most recent call last):
+...
+ValueError: my_int must be greater than 0
+>>>
+=======================================================
+case: 10
+Passing one argument to integer_validator
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("name")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+========================================================
+case: 11
+Integer_validator with no arguments
+>>> bg = BaseGeometry()
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+========================================================================
