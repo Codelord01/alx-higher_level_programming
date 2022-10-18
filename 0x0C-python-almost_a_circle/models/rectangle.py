@@ -1,77 +1,63 @@
 #!/usr/bin/python3
-"""
-creates a class rectangle
-"""
+"""Defines a rectangle class."""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """
-    Rectangle class
-    """
+    """Represent a rectangle."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initialize a new Rectangle.
+        Args:
+            width (int): The width of the new Rectangle.
+            height (int): The height of the new Rectangle.
+            x (int): The x coordinate of the new Rectangle.
+            y (int): The y coordinate of the new Rectangle.
+            id (int): The identity of the new Rectangle.
+        Raises:
+            TypeError: If either of width or height is not an int.
+            ValueError: If either of width or height <= 0.
+            TypeError: If either of x or y is not an int.
+            ValueError: If either of x or y < 0.
         """
-        init function for instance variables
-        """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
     def width(self):
-        """
-        getter for width
-        """
+        """Set/get the width of the Rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """
-        setter for width
-        """
         self.__width = value
 
     @property
     def height(self):
-        """
-        getter for height
-        """
+        """Set/get the height of the Rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """
-        setter for height
-        """
         self.__height = value
 
     @property
     def x(self):
-        """
-        getter for x
-        """
+        """Set/get the x coordinate of the Rectangle."""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """
-        setter for x
-        """
         self.__x = value
 
     @property
     def y(self):
-        """
-        getter for y
-        """
+        """Set/get the y coordinate of the Rectangle."""
         return self.__y
 
-    @x.setter
+    @y.setter
     def y(self, value):
-        """
-        setter for y
-        """
         self.__y = value
