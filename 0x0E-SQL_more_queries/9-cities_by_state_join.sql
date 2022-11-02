@@ -1,4 +1,7 @@
--- list all cities contained in database 'hbtn_0d_usa'
-SELECT `hbtn_0d_usa.cities.id`, `hbtn_0d_usa.cities.name`, `hbtn_0d_usa.states.name`
-FROM `hbtn_0d_usa.cities` NATURAL JOIN `hbtn_0d_usa.states`
-ORDER BY `hbtn_0d_usa.cities.id`;
+-- Lists all cities in the database hbtn_0d_usa.
+-- Records are sorted in order of ascending cities.id.
+SELECT c.`id`, c.`name`, s.`name`
+  FROM `cities` AS c
+       INNER JOIN `states` AS s
+       ON c.`state_id` = s.`id`
+ ORDER BY c.`id`;
